@@ -12,3 +12,4 @@ gst-launch-1.0 filesrc location=video.mp4 ! decodebin ! pulsesink
 
 ```
 
+https://software.intel.com/en-us/node/722575
