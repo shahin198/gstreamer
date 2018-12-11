@@ -6,6 +6,9 @@ sudo apt-get install libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-pl
 ```
 # read video from file
 ```
-gst-launch filesrc location=video.mp4 !decodebin2 name=dec ! queue ! ffmpegcolorspace ! autovideosink dec. ! queue ! audioconvert ! audioresample ! autoaudiosink
+gst-launch-1.0 -q filesrc location=video.mp4 ! decodebin ! jpegenc ! jpegparse ! jpegdec ! xvimagesink sync=true
+
+gst-launch-1.0 filesrc location=video.mp4 ! decodebin ! pulsesink
+
 ```
 
